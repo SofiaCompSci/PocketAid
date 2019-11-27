@@ -134,12 +134,12 @@ public class LoginActivity extends AppCompatActivity {
     private void showLoginFailed(@StringRes Integer errorString) {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
     }
-    private void skipLogin(View v) {
-        String welcome = getString(R.string.welcome);
+    public void skipLogin(View v) {
+//        String welcome = getString(R.string.welcome);
         // TODO : initiate successful experience
         Intent home = new Intent(this,NavActivity.class);
         startActivity(home);
-        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
     }
 
 }
