@@ -5,6 +5,7 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -22,6 +23,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.pocketaid.NavActivity;
 import com.example.pocketaid.R;
 import com.example.pocketaid.ui.login.LoginViewModel;
 import com.example.pocketaid.ui.login.LoginViewModelFactory;
@@ -124,11 +126,20 @@ public class LoginActivity extends AppCompatActivity {
     private void updateUiWithUser(LoggedInUserView model) {
         String welcome = getString(R.string.welcome) + model.getDisplayName();
         // TODO : initiate successful logged in experience
-        
+        Intent home = new Intent(this,NavActivity.class);
+        startActivity(home);
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
     }
+    private void skipLogin(View v) {
+        String welcome = getString(R.string.welcome);
+        // TODO : initiate successful experience
+        Intent home = new Intent(this,NavActivity.class);
+        startActivity(home);
+        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+    }
+
 }
