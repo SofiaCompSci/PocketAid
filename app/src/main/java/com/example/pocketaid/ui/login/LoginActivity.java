@@ -25,10 +25,6 @@ import android.widget.Toast;
 
 import com.example.pocketaid.NavActivity;
 import com.example.pocketaid.R;
-import com.example.pocketaid.ui.login.LoginViewModel;
-import com.example.pocketaid.ui.login.LoginViewModelFactory;
-
-import java.time.Instant;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -43,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
 
         final EditText usernameEditText = findViewById(R.id.username);
         final EditText passwordEditText = findViewById(R.id.password);
-        final Button loginButton = findViewById(R.id.login);
+        final Button loginButton = findViewById(R.id.loginButton);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {

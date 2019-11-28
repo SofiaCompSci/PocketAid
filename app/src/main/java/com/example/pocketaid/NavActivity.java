@@ -1,7 +1,10 @@
 package com.example.pocketaid;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.pocketaid.ui.Log.LogFragment;
+import com.example.pocketaid.ui.login.LoginActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -35,9 +38,9 @@ public class NavActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Add to today's log", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-            }
+        }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -65,4 +68,6 @@ public class NavActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+
 }
