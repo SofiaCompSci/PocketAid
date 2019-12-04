@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.example.pocketaid.ui.Log.LogFragment;
 import com.example.pocketaid.ui.Log.LogViewModel;
+import com.example.pocketaid.ui.SettingsActivity;
 import com.example.pocketaid.ui.login.LoginActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -41,13 +42,7 @@ public class NavActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("I am working");
-                Toast.makeText(getApplicationContext(), "I am working", Toast.LENGTH_LONG).show();
-
-                Snackbar.make(view, "Add to today's log", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-//                openLog(view);
-
+                Toast.makeText(getApplicationContext(), "Update today's log", Toast.LENGTH_LONG).show();
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -63,9 +58,13 @@ public class NavActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
-    private void openLog(View view) {
-        Intent Log = new Intent(this, LogViewModel.class);
+    public void openLog(View view) {
+        Intent Log = new Intent(this, LogFragment.class);
         startActivity(Log);
+    }
+    public void openSettings(View view) {
+        Intent Settings = new Intent(this, SettingsActivity.class);
+        startActivity(Settings);
     }
 
     @Override
